@@ -20,3 +20,6 @@ use App\Http\Controllers\MemberController;
 
 // Route::get('/', 'MemberController@index');
 Route::get('/', [MemberController::class, 'index']); //must use correct syntax
+
+Route::get('/show', [MemberController::class, 'getMember']);
+Route::post('/save', [MemberController::class, 'save']);
