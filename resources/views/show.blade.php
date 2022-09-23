@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <h2>Members Table
-            <button type="button" id="add" data-bs-toggle="modal" data-bs-target="#addnew" class="btn btn-primary pull-right">Add Member</button>
+            <button type="button" id="add" data-bs-toggle="modal" data-bs-target="#addnew" class="btn btn-primary pull-right add">Add Member</button>
         </h2>
     </div>
 </div>
@@ -96,6 +96,12 @@
 @section('script')
 <script type="text/javascript">
 $(document).ready(function () {
+
+    // add record
+    $(document).on('click', '.add', function(event) {
+        event.preventDefault();
+        $('#myModalLabel').html("Add Record");
+    });
 
     showMember();
 
