@@ -31,4 +31,18 @@ class MemberController extends Controller
             return response($member);
         }
     }
+
+    public function update(Request $request)
+    {
+        if ($request->ajax())
+        {
+            $member = Member::find($request->id);
+            // dd($member);
+            $member->firstname = $request->input('firstname');
+            $member->lastname = $request->input('lastname');
+
+            $member->update();
+            return response($member);
+        }
+    }
 }

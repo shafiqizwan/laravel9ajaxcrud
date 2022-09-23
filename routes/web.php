@@ -22,4 +22,5 @@ use App\Http\Controllers\MemberController;
 Route::get('/', [MemberController::class, 'index']); //must use correct syntax
 
 Route::get('/show', [MemberController::class, 'getMember']);
-Route::post('/save', [MemberController::class, 'save']);
+Route::post('/save', [MemberController::class, 'save'])->name('member.save');
+Route::post('/update', [MemberController::class, 'update'])->name('member.update');
